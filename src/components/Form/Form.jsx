@@ -1,6 +1,7 @@
 import { Formik, Form, Field } from 'formik';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import s from './Form.module.css';
 
 export class ContactForm extends Component {
   initalState = {
@@ -22,9 +23,12 @@ export class ContactForm extends Component {
             resetForm();
           }}
         >
-          <Form>
-            <label htmlFor="name">Name</label>
+          <Form className={s.form}>
+            <label htmlFor="name" className={s.label}>
+              Name
+            </label>
             <Field
+              className={s.input}
               type="text"
               name="name"
               id="name"
@@ -32,8 +36,11 @@ export class ContactForm extends Component {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
             />
-            <label htmlFor="number">Number</label>
+            <label htmlFor="number" className={s.label}>
+              Number
+            </label>
             <Field
+              className={s.input}
               type="tel"
               name="number"
               id="number"
@@ -41,7 +48,9 @@ export class ContactForm extends Component {
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
             />
-            <button type="submit">Add contact</button>
+            <button type="submit" className={s.button}>
+              Add contact
+            </button>
           </Form>
         </Formik>
       </>
