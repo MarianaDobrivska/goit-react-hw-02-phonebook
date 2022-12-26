@@ -1,0 +1,48 @@
+.form {
+  width: 300px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px 20px;
+  margin-left: 20px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.input {
+  padding: 5px;
+  font-size: 10px;
+  border: 1px solid rgba(181, 176, 176, 0.704);
+}
+
+.input:focus {
+  outline: 1px solid rgba(170, 167, 167, 0.704);
+}
+
+.input:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.button {
+  width: 33%;
+  padding: 5px 10px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+  border: 1px solid rgba(214, 209, 209, 0.704);
+  border-radius: 4px;
+  transition: all 300ms linear;
+}
+
+.button:hover,
+.button:focus {
+  background-color: rgb(159, 163, 163);
+  color: rgb(243, 237, 237);
+  box-shadow: rgba(0, 0, 0, 0.209) 0px 2px 5px;
+}
