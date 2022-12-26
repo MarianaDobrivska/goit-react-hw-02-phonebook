@@ -1,9 +1,14 @@
 import { Formik, Form, Field } from 'formik';
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import s from './Form.module.css';
 
 export class ContactForm extends Component {
+  static propTypes = {
+    addContact: PropTypes.func.isRequired,
+  };
+
   initalState = {
     name: '',
     number: '',

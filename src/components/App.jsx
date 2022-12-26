@@ -33,7 +33,7 @@ export class App extends Component {
   render() {
     const { contacts, filter } = this.state;
     return (
-      <>
+      <div className="wrapper">
         <h1>Phonebook</h1>
         <ContactForm addContact={this.addContact} />
         <h2>Contacts</h2>
@@ -43,7 +43,7 @@ export class App extends Component {
           filter={filter}
           onDeleteContact={this.onDeleteContact}
         />
-      </>
+      </div>
     );
   }
 }

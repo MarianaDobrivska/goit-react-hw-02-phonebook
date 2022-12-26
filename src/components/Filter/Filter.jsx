@@ -1,24 +1,30 @@
-import { Component } from 'react';
+import s from './Filter.module.css';
+import PropTypes from 'prop-types';
 
-export class Filter extends Component {
-  onInputChange = e => {
-    this.props.onChange(e.target.value);
+export const Filter = props => {
+  const { value, onChange } = props;
+  const filterValue = e => {
+    onChange(e.currentTarget.value);
   };
 
-  render() {
-    return (
-      <label htmlFor="filter">
-        {' '}
-        Find contacts by name
-        <input
-          onChange={this.onInputChange}
-          type="text"
-          name="filter"
-          id="filter"
-          value={this.props.value}
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        ></input>
-      </label>
-    );
-  }
-}
+  return (
+    <label htmlFor="filter" className={s.filterLabel}>
+      {' '}
+      Find contacts by name
+      <input
+        className={s.filterInput}
+        onChange={filterValue}
+        type="text"
+        name="filter"
+        id="filter"
+        value={value}
+        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+      ></input>
+    </label>
+  );
+};
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
